@@ -90,7 +90,7 @@ function progressionStyle() {
     const randomMove = () => (Math.floor(Math.random()*2)+1);
     const randomBiggerMove = () => (Math.floor(Math.random()*4)+2);
     if (playLine === playLineArray[4]) {
-        return;
+        console.log(finalProg);
     } else if 
         (playLine === playLineArray[3]) {
             
@@ -127,16 +127,16 @@ function progressionStyle() {
             //Bouncy Down Progression
             if (i === 1) {
                 finalProg[1] = majorKey[majorKey.lastIndexOf(`${finalProg[0]}`) - randomBiggerMove()];
-                diff = majorKey[majorKey.indexOf(`${finalProg[0]}`)] - majorKey[majorKey.indexOf(`${finalProg[1]}`)]
+                diff = Math.abs(majorKey[majorKey.indexOf(`${finalProg[0]}`)] - majorKey[majorKey.indexOf(`${finalProg[1]}`)]);
                 finalProg[2] = majorKey[majorKey.lastIndexOf(`${finalProg[1]}`) + (Math.floor(Math.random(diff)+1))];
-                diff = majorKey[majorKey.indexOf(`${finalProg[2]}`)] - majorKey[majorKey.indexOf(`${finalProg[1]}`)];
+                diff = Math.abs(majorKey[majorKey.indexOf(`${finalProg[2]}`)] - majorKey[majorKey.indexOf(`${finalProg[1]}`)]);
                 finalProg[3] = majorKey[majorKey.lastIndexOf(`${finalProg[2]}`) - (Math.floor(Math.random(diff)+2))];
         }
             if (i !== 1) {
                 finalProg[1] = minorKey[minorKey.lastIndexOf(`${finalProg[0]}`) - randomBiggerMove()];
-                diff = minorKey[minorKey.indexOf(`${finalProg[0]}`)] - minorKey[minorKey.indexOf(`${finalProg[1]}`)]
+                diff = Math.abs(minorKey[minorKey.indexOf(`${finalProg[0]}`)] - minorKey[minorKey.indexOf(`${finalProg[1]}`)]);
                 finalProg[2] = minorKey[minorKey.lastIndexOf(`${finalProg[1]}`) + (Math.floor(Math.random(diff)+1))];
-                diff = minorKey[minorKey.indexOf(`${finalProg[2]}`)] - minorKey[minorKey.indexOf(`${finalProg[1]}`)];
+                diff = Math.abs(minorKey[minorKey.indexOf(`${finalProg[2]}`)] - minorKey[minorKey.indexOf(`${finalProg[1]}`)]);
                 finalProg[3] = minorKey[minorKey.lastIndexOf(`${finalProg[2]}`) - (Math.floor(Math.random(diff)+2))];
             }
             console.log(finalProg);
@@ -147,16 +147,16 @@ function progressionStyle() {
             //Bouncy Up Progression
             if (i === 1) {
                 finalProg[1] = majorKey[majorKey.indexOf(`${finalProg[0]}`) + randomBiggerMove()];
-                diff = majorKey[majorKey.indexOf(`${finalProg[0]}`)] - majorKey[majorKey.indexOf(`${finalProg[1]}`)];
+                diff = Math.abs(majorKey[majorKey.indexOf(`${finalProg[0]}`)] - majorKey[majorKey.indexOf(`${finalProg[1]}`)]);
                 finalProg[2] = majorKey[majorKey.indexOf(`${finalProg[1]}`) - (Math.floor(Math.random(diff)+1))];
-                diff = majorKey[majorKey.indexOf(`${finalProg[2]}`)] - majorKey[majorKey.indexOf(`${finalProg[1]}`)];
+                diff = Math.abs(majorKey[majorKey.indexOf(`${finalProg[2]}`)] - majorKey[majorKey.indexOf(`${finalProg[1]}`)]);
                 finalProg[3] = majorKey[majorKey.indexOf(`${finalProg[2]}`) + (Math.floor(Math.random(diff)+2))];
         }
             if (i !== 1) {
                 finalProg[1] = minorKey[minorKey.indexOf(`${finalProg[0]}`) + randomBiggerMove()];
-                diff = minorKey[minorKey.indexOf(`${finalProg[0]}`)] - minorKey[minorKey.indexOf(`${finalProg[1]}`)];
+                diff = Math.abs(minorKey[minorKey.indexOf(`${finalProg[0]}`)] - minorKey[minorKey.indexOf(`${finalProg[1]}`)]);
                 finalProg[2] = minorKey[minorKey.indexOf(`${finalProg[1]}`) - (Math.floor(Math.random(diff)+1))];
-                diff = minorKey[minorKey.indexOf(`${finalProg[2]}`)] - minorKey[minorKey.indexOf(`${finalProg[1]}`)];
+                diff = Math.abs(minorKey[minorKey.indexOf(`${finalProg[2]}`)] - minorKey[minorKey.indexOf(`${finalProg[1]}`)]);
                 finalProg[3] = minorKey[minorKey.indexOf(`${finalProg[2]}`) + (Math.floor(Math.random(diff)+2))];
             }
             console.log(finalProg);
