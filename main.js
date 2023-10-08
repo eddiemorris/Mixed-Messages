@@ -83,6 +83,10 @@ let finalProg = [];
 let diff;
 function progressionStyle() {
     console.log(playLine);
+    firstChord();
+    secondChord();
+    thirdChord();
+    fourthChord();
     const randomMove = () => (Math.floor(Math.random()*2)+1);
     const randomBiggerMove = () => (Math.floor(Math.random()*4)+2);
     if (playLine === playLineArray[4]) {
@@ -166,10 +170,6 @@ function fullPicker() {
 
 
 
-firstChord();
-secondChord();
-thirdChord();
-fourthChord();
-console.log(finalProg);
+
 progressionStyle();
 
